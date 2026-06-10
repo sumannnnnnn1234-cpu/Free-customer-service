@@ -1,0 +1,121 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Activation</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#000;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.box{
+    background:#111;
+    padding:25px;
+    border-radius:12px;
+    width:320px;
+    text-align:center;
+    box-shadow:0 0 15px rgba(255,255,255,0.15);
+}
+
+h2{
+    margin-top:0;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #444;
+    border-radius:5px;
+    background:#222;
+    color:#fff;
+    box-sizing:border-box;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    background:#00c853;
+    color:#fff;
+    cursor:pointer;
+}
+
+#result{
+    color:#ffffff;
+    line-height:1.6;
+    text-align:left;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+    <div id="formArea">
+        <h2>Enter Code</h2>
+        <input type="text" id="codeInput" placeholder="Enter any code">
+        <button onclick="applyCode()">Apply</button>
+    </div>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function applyCode() {
+    let code = document.getElementById("codeInput").value;
+
+    if(code.trim() !== ""){
+        document.getElementById("formArea").style.display = "none";
+
+        document.getElementById("result").innerHTML = `
+        <h3 style="color:#00ff66;">✅ Service Activation Successful</h3>
+
+        Dear Customer,<br><br>
+
+        Your outgoing service has been successfully activated and is now available for use.<br><br>
+
+        Thank you for choosing our services.<br><br>
+
+        <b>Status: Active</b>
+        `;
+    } else {
+        alert("Please enter a code.");
+    }
+}
+</script>
+
+</body>
+</html><script>function applyCode() {
+    let code = document.getElementById("codeInput").value.trim();
+
+    const validCodes = ["ABC123", "VIP2026", "ACTIVE99"];
+
+    if(validCodes.includes(code)) {
+        document.getElementById("formArea").style.display = "none";
+
+        document.getElementById("result").innerHTML = `
+        <h3 style="color:#00ff66;">✅ Service Activation Successful</h3>
+
+        <div style="color:#FFFFFF;">
+        Dear Customer,<br><br>
+
+        Your outgoing service has been successfully activated and is now available for use.<br><br>
+
+        Thank you for choosing our services.<br><br>
+
+        <b>Status: Active</b>
+        </div>
+        `;
+    } else {
+        alert("Invalid Code!");
+    }
+}</script>
